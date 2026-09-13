@@ -4,12 +4,19 @@
   "description": "Haaaaaaave you ever meet awesome card?",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "keywords": [
     "awesome",
     "card"
   ],
   "author": "zoolsher",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "eslint": "^8.56.0"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
 }
