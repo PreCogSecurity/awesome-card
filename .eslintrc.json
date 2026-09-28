@@ -1,1 +1,45 @@
-{"extends":"eslint:recommended"}
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2021,
+    "sourceType": "script"
+  },
+  "extends": "eslint:recommended",
+  "globals": {
+    "module": "readonly",
+    "define": "readonly",
+    "global": "readonly",
+    "awesomeCard": "readonly"
+  },
+  "rules": {
+    "no-console": "error",
+    "eqeqeq": ["error", "always"],
+    "curly": ["error", "all"],
+    "no-throw-literal": "error",
+    "no-var": "off",
+    "vars-on-top": "off",
+    "no-eval": "error",
+    "no-implied-eval": "error",
+    "no-new-func": "error",
+    "no-proto": "error",
+    "no-script-url": "error"
+  },
+  "overrides": [
+    {
+      "files": ["tests/**/*.js"],
+      "env": {
+        "browser": false,
+        "node": true,
+        "jest": true
+      }
+    }
+  ],
+  "ignorePatterns": [
+    "node_modules/",
+    "coverage/"
+  ]
+}
