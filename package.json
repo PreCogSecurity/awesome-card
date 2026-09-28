@@ -1,15 +1,48 @@
 {
   "name": "awesome-card",
-  "version": "1.0.0",
-  "description": "Haaaaaaave you ever meet awesome card?",
+  "version": "1.1.0",
+  "description": "Tiny zero-dependency 3D tilt / parallax effect for a DOM card, driven by mouse position or device orientation.",
   "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE",
+    "SECURITY.md"
+  ],
+  "sideEffects": false,
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watch",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "verify": "npm run lint && npm test"
   },
   "keywords": [
     "awesome",
-    "card"
+    "card",
+    "tilt",
+    "parallax",
+    "3d",
+    "deviceorientation",
+    "vanilla-js"
   ],
+  "engines": {
+    "node": ">=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PreCogSecurity/awesome-card.git"
+  },
+  "bugs": {
+    "url": "https://github.com/PreCogSecurity/awesome-card/issues"
+  },
+  "homepage": "https://precogsecurity.github.io/awesome-card/",
   "author": "zoolsher",
   "license": "ISC",
   "devDependencies": {
@@ -17,6 +50,22 @@
     "eslint": "^8.56.0"
   },
   "jest": {
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "index.js"
+    ],
+    "coverageReporters": [
+      "text-summary",
+      "lcov"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "lines": 90,
+        "statements": 90,
+        "functions": 95,
+        "branches": 85
+      }
+    }
   }
 }
